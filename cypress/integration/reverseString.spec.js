@@ -11,6 +11,20 @@ function reverseShort(str) {
     return str.split('').reverse().join('')
 };
 
+function reverseRange(str) {
+    let reversed = '';
+
+    for (let character of str) {
+        reversed = character + reversed
+    }
+
+    return reversed;
+}
+
+function reverseReduce(str) {
+    return str.split('').reduce((rev, char) => char + rev, '');
+}
+
 describe('reverseString', () => {
     it('should return true', () => {
         expect(reverseString('apple')).to.equal('elppa')
@@ -32,5 +46,29 @@ describe('reverseString', () => {
     })
     it('should return true', () => {
         expect(reverseShort('Greetings!')).to.equal('!sgniteerG')
+    })
+});
+
+describe('reverseString', () => {
+    it('should return true', () => {
+        expect(reverseRange('apple')).to.equal('elppa')
+    })
+    it('should return true', () => {
+        expect(reverseRange('hello')).to.equal('olleh')
+    })
+    it('should return true', () => {
+        expect(reverseRange('Greetings!')).to.equal('!sgniteerG')
+    })
+});
+
+describe('reverseString', () => {
+    it('should return true', () => {
+        expect(reverseReduce('apple')).to.equal('elppa')
+    })
+    it('should return true', () => {
+        expect(reverseReduce('hello')).to.equal('olleh')
+    })
+    it('should return true', () => {
+        expect(reverseReduce('Greetings!')).to.equal('!sgniteerG')
     })
 });
